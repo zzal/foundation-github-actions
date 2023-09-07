@@ -1,0 +1,59 @@
+name: Prepare Release
+
+on:
+  workflow_dispatch:
+
+  push:
+    branches:
+      - feat/IRD-1696-automated-release-notes
+
+jobs:
+  prepare-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+        env:
+          NPM_READ_PACKAGES_TOKEN: ${{ secrets.NPM_READ_PACKAGES_TOKEN }}
+
+      - name: Generate changelog
+        uses: heinrichreimer/github-changelog-generator-action@v2.3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Check for CHANGELOG.md
+        id: check-changelog
+        run: |
+          if [[ -f "CHANGELOG.md" ]]; then
+            echo "CHANGELOG.md exists."
+            echo "exists=true" >> $GITHUB_OUTPUT
+          else
+            echo "CHANGELOG.md does not exist."
+            echo "exists=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit changelog
+        if: steps.check-changelog.outputs.exists == 'true'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add CHANGELOG.md
+          git commit -m "chore: update changelog"
+          git push
+
+      - name: Create Pull Request
+        if: steps.check-changelog.outputs.exists == 'true'
+        uses: peter-evans/create-pull-request@v5
+        with:
+          title: 'Release: Prepare release'
+          commit-message: 'Release: Prepare release'
+          label: auto-release
+          branch: "release/next"

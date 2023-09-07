@@ -1,0 +1,30 @@
+name: Release
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true && contains(github.event.pull_request.labels.*.name, 'auto-release')
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup node
+        uses: ingeno/foundation-github-actions/actions/node-setup@v3
+        env:
+          NPM_READ_PACKAGES_TOKEN: ${{ secrets.NPM_READ_PACKAGES_TOKEN }}
+
+      - name: Install dependencies
+        run: |
+          npm install @semantic-release/commit-analyzer @semantic-release/release-notes-generator @semantic-release/github
+
+      - name: Run semantic-release
+        run: npx semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
