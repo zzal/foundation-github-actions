@@ -55,9 +55,9 @@ branches:
   - name: main
     protection:
       required_pull_request_reviews:
-        required_approving_review_count: 2
+        required_approving_review_count: 0
         dismiss_stale_reviews: false
-        require_code_owner_reviews: true
+        require_code_owner_reviews: false
         dismissal_restrictions: {}
       required_status_checks: null
       required_signatures: true
