@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.1](https://github.com/ingeno/foundation-github-actions/compare/v5.1.0...v5.1.1) (2023-09-25)
+
+
+### Bug Fixes
+
+* **workflow:** renamed workflow ([3290e39](https://github.com/ingeno/foundation-github-actions/commit/3290e39a4dae4bddd8127b99c25681c7cfd16fa0))
+
+
+
+
+
 # 5.1.0 (2023-09-25)
 
 
