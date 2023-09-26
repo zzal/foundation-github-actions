@@ -4,7 +4,7 @@ description: Upload Build App to S3 Bucket
 inputs:
   aws-region:
     required: true
-    description: AWS region
+    description: AWS Region
 
   aws-s3-bucket:
     required: true
