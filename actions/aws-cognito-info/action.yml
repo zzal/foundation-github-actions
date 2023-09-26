@@ -1,4 +1,4 @@
-name: AWS Cognito information
+name: AWS Cognito Information
 description: Get the AWS Cognito information
 
 inputs:
