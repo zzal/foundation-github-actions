@@ -1,5 +1,5 @@
 name: Deploy App to S3
-description: Upload Build app to S3 Bucket
+description: Upload Build App to S3 Bucket
 
 inputs:
   aws-region:
