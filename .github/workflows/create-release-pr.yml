@@ -15,7 +15,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup node
+      - name: Set up node
         uses: ingeno/foundation-github-actions/actions/node-setup@v5
         env:
           NPM_READ_PACKAGES_TOKEN: ${{ secrets.NPM_READ_PACKAGES_TOKEN }}
