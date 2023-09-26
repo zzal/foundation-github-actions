@@ -37,11 +37,6 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Setup .npmrc file for GitHub Packages
-        run: |
-          echo "@ingeno:registry=https://npm.pkg.github.com/" >> ~/.npmrc
-          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> ~/.npmrc
-
       - name: Create GitHub Release
         uses: ncipollo/release-action@v1.13.0
         with:
