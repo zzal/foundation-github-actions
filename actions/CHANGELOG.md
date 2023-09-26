@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.2.0](https://github.com/ingeno/foundation-github-actions/compare/v5.1.1...v5.2.0) (2023-09-26)
+
+
+### Features
+
+* dummy commit ([#12](https://github.com/ingeno/foundation-github-actions/issues/12)) ([c79a853](https://github.com/ingeno/foundation-github-actions/commit/c79a853fbe90394868e4cec281d3c8a8317c8f12))
+
+
+
+
+
 ## [5.1.1](https://github.com/ingeno/foundation-github-actions/compare/v5.1.0...v5.1.1) (2023-09-25)
 
 **Note:** Version bump only for package @ingeno-foundation/github-actions
