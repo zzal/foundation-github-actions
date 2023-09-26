@@ -1,6 +1,6 @@
 {
   "name": "@ingeno-foundation/github-actions",
-  "version": "6.0.0",
+  "version": "6.0.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/ingeno/foundation-github-actions.git",
