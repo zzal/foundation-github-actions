@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0](https://github.com/ingeno/foundation-github-actions/compare/v5.2.1...v6.0.0) (2023-09-26)
+
+
+### Features
+
+* test breaking change ([#20](https://github.com/ingeno/foundation-github-actions/issues/20)) ([23f90d9](https://github.com/ingeno/foundation-github-actions/commit/23f90d96db8a35921dad045288d57506d011fb5d))
+
+
+### BREAKING CHANGES
+
+* test
+
+
+
+
+
 ## [5.2.1](https://github.com/ingeno/foundation-github-actions/compare/v5.2.0...v5.2.1) (2023-09-26)
 
 **Note:** Version bump only for package @ingeno-foundation/github-actions
